@@ -1,3 +1,4 @@
+
 class ScrollObserver {
     constructor(els, cb, options) {
         this.els = document.querySelectorAll(els);
@@ -34,7 +35,7 @@ class ScrollObserver {
         this.els.forEach(el => this.io.observe(el));
     }
 
-    destroy() {
+    destory() {
         this.io.disconnect();
     }
 }
