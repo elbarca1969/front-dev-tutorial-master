@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', function () {
         if(inview) {
             el.classList.add('inview');
         } else {
-            el.classList.romove('inview');
+            el.classList.remove('inview');
         }
     }
 
