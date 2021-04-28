@@ -141,17 +141,18 @@ main {
 
   &__title {
     position: relative;
-    @include p-base($display: none, $width: 100px, $height: 1px, $top: 50%, $left: -120px) {
+
+    @include p-base(
+      $display: none,
+      $width: 100px,
+      $height: 1px,
+      $top: 50%,
+      $left: -120px
+    ) {
       background-color: $cBlack;
       transform: translateY(-50%) scaleX(0);
       transition: transform 0.3s ease 1.6s;
       transform-origin: right;
-    }
-
-    &.inview {
-      &::before {
-        transform: translateY(-50%);
-      }
     }
   }
 
@@ -179,6 +180,12 @@ main {
   
   &__texts {
     @extend .pb-sm;
+
+    &.inview {
+      & .travel__title::before {
+        transform: translateY(-50%);
+      }
+    }
   }
 }
 
@@ -299,17 +306,22 @@ main {
   position: fixed;
   top: 70%;
   transform: translateY(-50%);
+  transition: all 0.3s ease-in;
 
-  & a,
-  & span {
+  & .tween-animate-title {
     color: $cBlack;
     text-decoration: none !important;
     margin: 0 40px;
     vertical-align: middle;
+    letter-spacing: 2px;
   }
 
   &.left {
-    left: 50px;
+    left: -50px;
+
+    &.inview {
+      left: 50px;
+    }
 
     & .side__inner {
       transform-origin: top left;
@@ -317,7 +329,11 @@ main {
     }
   }
   &.right {
-    right: 50px;
+    right: -50px;
+
+    &.inview {
+      right: 50px;
+    }
 
     & .side__inner {
       transform-origin: top right;
