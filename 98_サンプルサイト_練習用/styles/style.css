@@ -767,7 +767,7 @@ img {
   font-size: 17px;
 }
 
-.font-lr {
+.font-lr, .houses__title {
   font-size: 17px;
 }
 
@@ -775,7 +775,7 @@ img {
   font-size: 25px;
 }
 
-.mb-sm {
+.mb-sm, .houses__title {
   margin-bottom: 16px !important;
 }
 
@@ -806,6 +806,22 @@ img {
   color: #535353;
 }
 
+.flex, .houses__inner {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.houses__btn {
+  text-align: center;
+  -ms-flex-preferred-size: 100%;
+      flex-basis: 100%;
+}
+
 @media (min-width: 480px) {
   /******************************************************************
 
@@ -820,6 +836,19 @@ Stylesheet: 480px以上(スマホの横向き)のモニタで適用
 Stylesheet: 600px以上のタブレットやモニタで適用
 
 ******************************************************************/
+  .flex, .houses__inner {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  .houses__item {
+    -ms-flex-preferred-size: 50%;
+        flex-basis: 50%;
+    margin-bottom: 60px;
+  }
 }
 
 @media (min-width: 960px) {
@@ -834,7 +863,7 @@ Stylesheet: 960px以上のモニタで適用
   .font-md {
     font-size: 19px;
   }
-  .font-lr {
+  .font-lr, .houses__title {
     font-size: 23px;
   }
   .font-lg, .main-title {
